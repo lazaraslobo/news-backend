@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "sail-build": "sh ./setup.sh && sudo ./vendor/bin/sail build --no-cache && npm run sail-up",
+        "sail-up": "sh ./setup.sh && sudo ./vendor/bin/sail up",
+        "sail-down": "sudo ./vendor/bin/sail down --remove-orphans",
+        "sail-bash": "sudo ./vendor/bin/sail shell"
+    }
+}
