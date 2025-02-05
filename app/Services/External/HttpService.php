@@ -29,12 +29,12 @@ class HttpService
      */
     public function get(string $url, array $query = []): array
     {
-//        $key = $url . '-' .implode('-', $query);
-//        $value = RedisHelper::get($key) ?? null;
-//        if(!isset($value)){
+        $key = $url . '-' .implode('-', $query);
+        $value = RedisHelper::get($key) ?? null;
+        if(!isset($value)){
             $value = $this->request('GET', $url, ['query' => $query]);
-//            RedisHelper::set($key, $value, 3600);
-//        }
+            RedisHelper::set($key, $value, 3600);
+        }
         return $value;
     }
 
